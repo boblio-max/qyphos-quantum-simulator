@@ -46,8 +46,11 @@ class QyphosSimulator:
         if self.statevector is None or self.n_qubits != circuit.n_qubits:
             self._initialize_statevector(circuit.n_qubits)
         else: # Reset state if running again
-            self.statevector.fill(0)
-            self.statevector[0] = 1.0
+            if self.backend.name == 'tensor':
+                self.statevector = self.backend.initial_state(circuit.n_qubits, self.precision)
+            else:
+                self.statevector.fill(0)
+                self.statevector[0] = 1.0
 
         state_history = []
         if store_history:

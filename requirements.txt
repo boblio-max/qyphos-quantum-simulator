@@ -5,6 +5,8 @@ psutil
 streamlit
 plotly
 pandas
+quimb
+autoray
 # For GPU support, install CuPy separately based on your CUDA version:
 # e.g., pip install cupy-cuda12x
 # For NVML support for GPU memory checking:

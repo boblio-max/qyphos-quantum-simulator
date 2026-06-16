@@ -27,6 +27,10 @@ def check_memory_requirements(n_qubits: int, precision: str = 'complex128', back
     Raises:
         MemoryError: If the estimated memory exceeds 80% of available memory.
     """
+    if backend == 'tensor':
+        log.info("Memory Check: Tensor backend used. Dense statevector limits do not apply.")
+        return
+
     bytes_per_element = 16 if precision == 'complex128' else 8
     required_memory = (2 ** n_qubits) * bytes_per_element
     
