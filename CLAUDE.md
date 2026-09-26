@@ -29,3 +29,10 @@ Before claiming any task done, Claude MUST:
 2. Run `python test_tensor.py` and confirm it prints `Probabilities: ...` without an unhandled exception.
 3. Confirm `pip install -r requirements.txt` succeeds in a clean venv.
 4. Report the exact commands run and their outcomes in the final message.
+
+## GitHub account rule (AGENCY-ACCOUNT-RULE)
+This folder is a PERSONAL project of boblio-max. For ANY GitHub operation
+(gh commands, git push/pull, releases), the active account MUST be
+`boblio-max` — NEVER the Storefront Web agency account.
+Check first: `gh auth status`. If another account is active, run
+`gh auth switch --user boblio-max` before proceeding.
